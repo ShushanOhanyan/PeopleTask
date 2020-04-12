@@ -1,0 +1,66 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+    <p>You can add people here</p>
+    
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>User</legend>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Surname)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Surname)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Relation)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Relation)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PhoneNumber)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @type = "number" })
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Email)
+            </div>
+
+            <input type="submit" />
+        </fieldset>
+    }
+
+    @*<form method="post">
+        Name: <input type="text" name="name" />
+        Surname: <input type="text" name="surname" />
+        Relation: <input type="text" name="relation" />
+        Phone Number: <input type="number" name="phoneNumber" />
+        Email Address: <input type="email" name="emailAddress" />
+        <input type="submit" />
+    </form>*@
+    
+ 
+
+</div>
